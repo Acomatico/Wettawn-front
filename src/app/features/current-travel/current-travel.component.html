@@ -1,0 +1,26 @@
+<div class="card w-100 bg-light" *ngFor="let day of weatherArray">
+  <div class="card-body">
+    <h5 class="card-title">{{day[0].weekday}} {{day[0].date}}</h5>
+    <ul class="list-group">
+      <li class="list-group-item bg-dark text-light" *ngFor="let weather of day">
+        <p>{{weather.time}}</p>
+        <span>
+          <i class="fas fa-thermometer-half"></i>
+          Temperature: {{weather.temperature}}C
+        </span>
+        <span>
+          <i class="fas fa-cloud-sun-rain"></i>
+          Weather: {{weather.weather}}
+        </span>
+        <span *ngIf="weather.rain">
+          <i class="fas fa-cloud-rain"></i>
+          {{weather.rain}}
+        </span>
+        <span *ngIf="weather.snow">
+          <i class="far fa-snowflake"></i>
+          Snow: {{weather.snow}}
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.nav{
+  display:flex;
+  flex-direction: column;
+  min-height:15vh;
+  // border-right:1px outset black;
+}
+.main-nav{
+  background: url("../../../assets/background/leaves.png");
+}
+main{
+  width:60%;
+  margin: 0 auto;
+  min-height:85vh;
+  background: #F7F7F9;
+  box-shadow: 0 0 3px 1px gray;
+}
+@media(max-width:600px){
+  main{
+    width:100%;
+  }
+}

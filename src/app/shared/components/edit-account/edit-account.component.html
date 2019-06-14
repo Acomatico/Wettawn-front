@@ -1,0 +1,14 @@
+<h2 class="display-4">Edit Account</h2>
+<form [formGroup]="editForm" (ngSubmit)="editAccount()">
+  <div class="form-group">
+    <label>City</label>
+    <input class="form-control bg-dark text-light" type="text" name="city" formControlName="city"
+      placeholder="Set a new home city" />
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input class="form-control bg-dark text-light" type="text" name="email" formControlName="email"
+      placeholder="Set a new Email" />
+  </div>
+  <button class="btn btn-info text-dark" type="submit">Edit Account</button>
+</form>

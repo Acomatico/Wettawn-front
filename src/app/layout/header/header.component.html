@@ -1,0 +1,19 @@
+<div class="bg-light d-flex justify-content-between">
+    <div class="mr-auto p-2">
+        <h1>Wettawn</h1>
+    </div>
+    <ul class="nav nav-pills" *ngIf="!loggedIn">
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+        <hr>
+        <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign Up</a>
+        </li>
+    </ul>
+    <ul class="nav nav-pills" *ngIf="loggedIn">
+        <li class="nav-item">
+            <a class="nav-link" href="/home" (click)="logout()">Logout</a>
+        </li>
+    </ul>
+</div>

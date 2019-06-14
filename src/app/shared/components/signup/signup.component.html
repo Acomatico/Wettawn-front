@@ -1,0 +1,19 @@
+<div class="bg-dark"></div>
+<form [formGroup]="signupForm" class="bg-light text-dark" (ngSubmit)="signup()">
+  <div class="form-group">
+    <label>Email</label>
+    <input class="form-control bg-dark text-light" type="text" name="email" formControlName="email"
+      placeholder="Write your email" />
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input class="form-control bg-dark text-light" type="password" name="password" formControlName="password"
+      placeholder="" />
+  </div>
+  <div class="form-group">
+    <label>City</label>
+    <input class="form-control bg-dark text-light" type="string" name="location" formControlName="location"
+      placeholder="Set your city" />
+  </div>
+  <button class="btn btn-primary" type="submit">Signup!</button>
+</form>

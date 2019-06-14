@@ -1,0 +1,13 @@
+form{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn{
+  background:#f0ad4e;
+  padding:0.65rem 2rem;
+  color:#2A232A;
+  :hover{
+    background: white;
+  }
+}

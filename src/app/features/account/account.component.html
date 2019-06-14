@@ -1,0 +1,40 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">Weather in {{weatherService.weatherInfo[0].city}}</h2>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <i class="fas fa-thermometer-half"></i>
+        Temperature {{weatherService.weatherInfo[0].minTemp}} -
+        {{weatherService.weatherInfo[0].maxTemp}}C</li>
+      <li class="list-group-item">
+        <i class="fas fa-cloud-sun-rain"></i>
+        Weather: {{weatherService.weatherInfo[0].weather}}</li>
+      <li class="list-group-item">
+        <i class="fas fa-tachometer-alt"></i>
+        Pressure: {{weatherService.weatherInfo[0].pressure}} hPA</li>
+      <li class="list-group-item">
+        <i class="fas fa-tint"></i>
+        Humidity: {{weatherService.weatherInfo[0].humidity}} %</li>
+      <li class="list-group-item">
+        <i class="fas fa-wind"></i> Wind:
+        {{weatherService.weatherInfo[0].windSpeed}} {{weatherService.weatherInfo[0].windDir}} </li>
+      <li class="list-group-item">
+        <i class="fas fa-cloud"></i>
+        Cloudiness: {{weatherService.weatherInfo[0].cloudiness}} %</li>
+      <li class="list-group-item" *ngIf="weatherService.weatherInfo[0].rain">
+        <i class="fas fa-cloud-rain"></i>
+        Rain:
+        {{weatherService.weatherInfo[0].rain}} </li>
+      <li class="list-group-item" *ngIf="weatherService.weatherInfo[0].snow">
+        <i class="far fa-snowflake"></i>
+        Snow:
+        {{weatherService.weatherInfo[0].snow}} </li>
+    </ul>
+  </div>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <p-edit-acc>
+      </p-edit-acc>
+    </div>
+  </div>
+</div>

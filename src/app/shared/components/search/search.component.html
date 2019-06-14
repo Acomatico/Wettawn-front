@@ -1,0 +1,6 @@
+<form class="form-inline my-2 my-lg-0" [formGroup]="searchForm" (ngSubmit)="search(searchForm.value)">
+  <div class="form-group">
+    <input class="form-control" type="text" name="city" formControlName="city" placeholder="Search a city!" />
+  </div>
+  <button class="btn" type="submit">Search</button>
+</form>
