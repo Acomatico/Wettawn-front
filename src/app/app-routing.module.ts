@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainNavComponent } from './layout/main-nav/main-nav.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   {
     path: '',
     component: MainNavComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'account',
@@ -35,13 +37,18 @@ const routes: Routes = [
       {
         path: 'travel',
         loadChildren: './features/current-travel/current-travel.module#CurrentTravelModule'
+      },
+      {
+        path: 'search/:city',
+        loadChildren: './features/search-result/search-result.module#SearchResultModule'
+      },
+      {
+        path: '**',
+        loadChildren: './features/not-found/not-found.module#NotFoundModule'
       }
     ]
-  },
-  {
-    path: 'search/:city',
-    loadChildren: './features/search-result/search-result.module#SearchResultModule'
   }
+
 ];
 
 @NgModule({

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Antic+Slab&display=swap');
 
+body{
+  background: url('./assets/background/leaves.png')
+}
+
 $headings-font-family:'Antic Slab';
 $white:    #fff !default;
 $gray-100: #f4f4f4 !default;
@@ -115,3 +119,5 @@ $pagination-disabled-border-color:  $pagination-border-color !default;
 $breadcrumb-bg:                     transparent !default;
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+@import '../node_modules/swiper/dist/css/swiper.min.css';

@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.authService.authInfo)
+        //console.log(this.authService.authInfo)
         if (this.authService.authInfo && this.authService.authInfo.token) {
             this.loggedIn = true;
         }

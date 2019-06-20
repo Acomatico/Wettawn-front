@@ -14,16 +14,29 @@ export class CurrentTravelComponent implements OnInit {
   ngOnInit() {
     this.weatherService.currentTrip().subscribe(
       () => {
+        console.log(this.weatherService.weatherInfo)
         this.weatherArray = this.weatherService.weatherInfo.slice(1, this.weatherService.weatherInfo.length - 1)
         console.log(this.weatherArray);
-        this.city = this.weatherService.weatherInfo[0];
+
       }
     )
-    this.travelService.currentTravel().subscribe()
-
+    this.travelService.currentTravel().subscribe(
+      () => {
+        this.travelInfo = this.travelService.travelInfo;
+        console.log(this.travelInfo)
+      }
+    )
 
   }
-  city;
+  travelInfo;
   weatherArray;
+
+  areClothesVisible = false;
+  showClothes() {
+    this.areClothesVisible = true;
+  }
+  hideClothes() {
+    this.areClothesVisible = false;
+  }
 
 }

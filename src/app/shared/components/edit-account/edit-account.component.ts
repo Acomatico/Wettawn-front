@@ -19,7 +19,7 @@ export class EditAccountComponent {
 
   }
 
-  editAccount(email, city) {
-    this.accountService.editAccount({ email, city }).subscribe()
+  editAccount() {
+    this.accountService.editAccount(this.editForm.value).subscribe()
   }
 }

@@ -1,7 +1,21 @@
-<div class="card w-100 bg-light" *ngFor="let day of weatherArray">
+<div class="title bg-white" *ngIf="weatherArray">
+  <h2 class="display-4">Weather Forecast</h2>
+  <p>For {{travelInfo.city}}, current trip starting in {{travelInfo.start}} and finishing on
+    {{travelInfo.end}}</p>
+</div>
+<div class="card" *ngIf="!weatherArray">
+  <h5 class="card-header">No travel found!</h5>
   <div class="card-body">
-    <h5 class="card-title">{{day[0].weekday}} {{day[0].date}}</h5>
+    <h5 class="card-title">Currently not traveling</h5>
+    <p class="card-text">Click the button bellow to start.</p>
+    <a href="/addtravel" class="btn btn-info mt-2">Start a new travel!</a>
+  </div>
+</div>
+
+<div class="card w-100 bg-light" *ngFor="let day of weatherArray">
+  <div class="card-body d-flex">
     <ul class="list-group">
+      <h5 class="card-title">{{day[0].weekday}} {{day[0].date}}</h5>
       <li class="list-group-item bg-dark text-light" *ngFor="let weather of day">
         <p>{{weather.time}}</p>
         <span>
@@ -22,5 +36,9 @@
         </span>
       </li>
     </ul>
+    <div class="image">
+      <p (mouseover)="showClothes()" (mouseout)="hideClothes()">Recomended clothing for the day</p>
+      <img src="../../../assets/clothes/{{day[0].clothes}}.jpg" *ngIf="areClothesVisible" />
+    </div>
   </div>
 </div>

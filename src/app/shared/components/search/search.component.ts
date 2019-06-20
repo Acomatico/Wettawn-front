@@ -17,8 +17,8 @@ export class SearchComponent {
 
   search(city) {
     if (!city) return;
-
-    console.log(`/search?q=${city.city}`)
-    this.router.navigate([`/search?q=${city.city}`]);
+    this.router.onSameUrlNavigation = 'reload';
+    //console.log(`/search/${city.city}`)
+    this.router.navigate([`/search/${city.city}`]);
   }
 }

@@ -29,6 +29,7 @@ export class SignupComponent {
         'Thanks for signing up!',
         'You can now login with your email and password.'
       )
+
       // this.router.navigate(['/login']);
     })
   }

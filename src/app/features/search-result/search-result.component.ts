@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../../core/services/weather.service'
-import { Router } from '@angular/router';
-import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'p-search-result',
@@ -10,13 +10,16 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 })
 
 export class SearchResultComponent implements OnInit {
-  constructor(public weatherService: WeatherService, private router: Router) { }
+  constructor(public weatherService: WeatherService, private router: Router, private route: ActivatedRoute) { }
 
 
   ngOnInit() {
-    const url = this.router.url;
-    const parsedUrl = url.split('/')
-    const city = parsedUrl[parsedUrl.length - 1]
+    let city;
+    this.route.paramMap.subscribe(params => {
+      city = params.get('city')
+
+    })
+    // console.log(city);
     this.weatherService.searchWeather(city).subscribe()
 
   }
